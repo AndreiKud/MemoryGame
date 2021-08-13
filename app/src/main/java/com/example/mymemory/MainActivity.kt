@@ -2,6 +2,7 @@ package com.example.mymemory
 
 import android.animation.ArgbEvaluator
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -58,6 +59,11 @@ class MainActivity : AppCompatActivity() {
                     initializeGame()
                     updateTextes(true)
                 }
+            }
+            R.id.miNewActivity -> {
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra("KEK", 15)
+                startActivityForResult(intent, 42)
             }
         }
 
